@@ -11,7 +11,6 @@ Patch: xmms-vtx-0.7-gcc4.patch
 URL: http://sashnov.nm.ru/ayengine.html
 License: GPL
 Group: Sound
-BuildRoot: %{_tmppath}/%{name}-buildroot
 BuildRequires: xmms-devel
 Requires: xmms
 
