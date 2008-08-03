@@ -1,6 +1,6 @@
 %define name xmms-vtx
 %define version 0.7
-%define release %mkrel 8
+%define release %mkrel 9
 
 Summary: Plays VTX files containing music from the ZX Spectrum
 Name: %{name}
