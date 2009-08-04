@@ -1,6 +1,6 @@
 %define name xmms-vtx
 %define version 0.7
-%define release %mkrel 9
+%define release %mkrel 10
 
 Summary: Plays VTX files containing music from the ZX Spectrum
 Name: %{name}
@@ -9,7 +9,7 @@ Release: %{release}
 Source0: %{name}-%{version}.tar.bz2
 Patch: xmms-vtx-0.7-gcc4.patch
 URL: http://sashnov.nm.ru/ayengine.html
-License: GPL
+License: GPLv2+
 Group: Sound
 BuildRoot: %{_tmppath}/%{name}-buildroot
 BuildRequires: xmms-devel
@@ -25,9 +25,10 @@ total time 31:15. More tunes could be found on http://vtx.microfor.ru
 %setup -q
 %patch -p1
 tar xzf music_sample.tar.gz
+autoreconf -fi
 
 %build
-%configure
+%configure2_5x
 %make
 
 %install
