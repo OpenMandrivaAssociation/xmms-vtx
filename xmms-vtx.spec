@@ -1,6 +1,6 @@
 %define name xmms-vtx
 %define version 0.7
-%define release %mkrel 10
+%define release %mkrel 11
 
 Summary: Plays VTX files containing music from the ZX Spectrum
 Name: %{name}
@@ -24,8 +24,10 @@ total time 31:15. More tunes could be found on http://vtx.microfor.ru
 %prep
 %setup -q
 %patch -p1
+
 tar xzf music_sample.tar.gz
 autoreconf -fi
+
 
 %build
 %configure2_5x
