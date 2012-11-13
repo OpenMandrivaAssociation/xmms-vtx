@@ -1,0 +1,36 @@
+--- xmms-vtx-0.7/ay8912.c.gcc4	2003-08-12 01:32:54.000000000 +0200
++++ xmms-vtx-0.7/ay8912.c	2006-02-09 10:06:31.000000000 +0100
+@@ -349,6 +349,7 @@
+         Word    bit;
+         int     n;
+         Byte *outbuf_b;
++	Word *outbuf_w;
+         
+         do {
+                 mix_l = mix_r = 0;
+@@ -415,17 +416,20 @@
+                         mix_l = (mix_l >> 8) | 128;
+                         mix_r = (mix_r >> 8) | 128;
+ 
+-                        *((Byte*)outbuf_b)++ = mix_l;
++                        *(outbuf_b)++ = mix_l;
+                         if ( config.Stereo != _MONO )
+-                                *((Byte*)outbuf_b)++ = mix_r;
++                                *(outbuf_b)++ = mix_r;
+ 
+                         *outbuf_pos = *outbuf_b;  // ???
+                 }
+                 else
+                 {
+-                        *((Word*)outbuf_pos)++ = mix_l;
+-                        if ( config.Stereo != _MONO )
+-                                *((Word*)outbuf_pos)++ = mix_r;
++                        outbuf_w=outbuf_pos;
++                        *(outbuf_w)++ = mix_l;
++                        if ( config.Stereo != _MONO ) {
++                                *(outbuf_w)++ = mix_r;
++				  }
++                        outbuf_pos=outbuf_w;
+                 }
+         } 
+         while (--numcount);
