@@ -8,7 +8,7 @@ Version: %{version}
 Release: %{release}
 Source0: %{name}-%{version}.tar.bz2
 Patch: xmms-vtx-0.7-gcc4.patch
-URL: http://sashnov.nm.ru/ayengine.html
+URL: https://sashnov.nm.ru/ayengine.html
 License: GPLv2+
 Group: Sound
 BuildRoot: %{_tmppath}/%{name}-buildroot
